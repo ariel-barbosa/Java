@@ -13,12 +13,21 @@ public class Funcionario {
 
     }
 
+
+
     public Funcionario(String nome, double salario, double novoSalario, double aumento) {
         setNome(nome);
         setSalario(salario);
         setNovoSalario(novoSalario);
         setAumento(aumento);
     }
+
+    //Sobrecarga
+    public Funcionario(String nome, double salario) {
+        setNome(nome);
+        setSalario(salario);
+    }
+
 
     //get e set para 'nome'
     public String getNome() {
@@ -56,7 +65,13 @@ public class Funcionario {
         salario = salario + this.aumento;
     }
 
-
-
-    
+    //Método toString
+    public String toString() {
+        return "Funcionario{" +
+                "nome='" + nome + '\'' +
+                ", salario=" + salario +
+                ", novoSalario=" + novoSalario +
+                ", aumento=" + aumento +
+                '}';
+    }
 }
