@@ -43,15 +43,15 @@ public class Funcionario {
         this.salario = salario;
     }
 
-
-    //get e set para 'aumento'
-    public double getAumento() {
-        return aumento;
+    public void aplicarAumento(double porcentagem) {
+        double aumentoSalario = this.salario * (porcentagem / 100);
+        this.salario += aumentoSalario;
     }
+    
 
-    public void setAumento(double aumento, double novoSalario) {
-        novoSalario = salario + salario*aumento/100;
-    }
+
+    
+    
 
     
     //Método toString
