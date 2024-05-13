@@ -18,9 +18,7 @@ public class Programa {
         List<Funcionario> lista = new ArrayList<>();
 
         LocalDate dataHoje = LocalDate.now();
-        // Formatar a data (opcional)
-        // Exemplo: dd/MM/yyyy
-        // LocalDate formatter = LocalDate.now(); // Não é necessário formatar para imprimir
+        // Não é necessário formatar para imprimir
 
         System.out.println("Data atual: " + dataHoje);
 
