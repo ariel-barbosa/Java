@@ -12,8 +12,15 @@ public class Vip extends Ingresso {
         super();
     }
     
-    public Vip(double valorVip, double valorAdicional) {
+    public Vip(double valor, double valorVip, double valorAdicional) {
         super(valor);
+        this.valorVip = valorVip;
+        this.valorAdicional = valorAdicional;
+    }
+
+    //Metodo para retornar valor do ingresso vip
+    public double imprimeVip() {
+        return valorVip + valorAdicional;
     }
     
 }

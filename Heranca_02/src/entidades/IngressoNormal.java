@@ -3,7 +3,7 @@ package entidades;
 public class IngressoNormal extends Ingresso {
 
     //atributos para ingresso Normal
-    private double valorNormal;
+    protected double valorNormal;
 
     //Construtor com função super()
     public IngressoNormal() {
@@ -12,11 +12,12 @@ public class IngressoNormal extends Ingresso {
 
     public IngressoNormal(double valor, double valorNormal) {
         super(valor);
+        this.valorNormal = valorNormal;
     }
 
     //Metodo para imprimir valor de ingresso normal
-    public double imprimeNormal() {
-        return valorNormal;
+    public String imprimeNormal() {
+        return "Ingresso Normal";
     }
 
 }
