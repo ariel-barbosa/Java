@@ -1,10 +1,23 @@
 package entidades;
 
+//SuperClasse genérica
+
 public class ContaConmum {
 
     private Integer numero;
     private String titular;
     protected Double saldo;
+
+    //Construtores
+    public ContaConmum() {
+
+    }
+
+    public ContaConmum(Integer numero, String titular, Double saldo) {
+        this.numero = numero;
+        this.titular = titular;
+        this.saldo = saldo; 
+    }
 
 
     public Integer getNumero() {
@@ -22,8 +35,12 @@ public class ContaConmum {
     public Double getSaldo() {
         return saldo;
     }
-    public void setSaldo(Double saldo) {
-        this.saldo = saldo;
+    public void sacar(double valor) {
+        saldo -= valor;
+    }
+
+    public void deposito(double valor) {
+        saldo += valor;
     }
 
 }
