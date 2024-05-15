@@ -3,7 +3,7 @@ package entidades;
 public class Ingresso {
     
     //Atributo valor
-    private double valor;
+    protected double valor;
 
     //Construtor padrão default
     public Ingresso() {
