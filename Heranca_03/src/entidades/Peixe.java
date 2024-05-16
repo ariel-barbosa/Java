@@ -10,8 +10,20 @@ public class Peixe extends Animal {
         super();
     }
 
-    
+    //metodos get e set
+    public String getCaracteristica() {
+        return caracteristica;
+    }
 
+    public void setCaracteristica(String caracteristica) {
+        this.caracteristica = caracteristica;
+    }
+
+    //metodo para mostrar os dados do peixe
+    @Override
+    public void dados() {
+        System.out.printf(caracteristica);
+    }
 
     
 }
