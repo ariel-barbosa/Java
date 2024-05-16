@@ -22,8 +22,9 @@ public class Peixe extends Animal {
     //metodo para mostrar os dados do peixe
     @Override
     public void dados() {
-        System.out.printf(caracteristica);
+        System.out.printf(this.caracteristica);
     }
+    
 
     
 }
