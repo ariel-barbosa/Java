@@ -9,7 +9,10 @@ public class CamaroteInferior extends Vip {
         super();
     }
 
-    public CamaroteInferior()
+    public CamaroteInferior(double valorAdicional, String localizacao) {
+        super(valorAdicional);
+        this.localizacao = localizacao;
+    }
 
     public String getLocalizacao() {
         return localizacao;
@@ -18,6 +21,11 @@ public class CamaroteInferior extends Vip {
     public void setLocalizacao(String localizacao) {
         this.localizacao = localizacao;
     }
+
+    public void imprimeLocalizacao() {
+        System.out.println("Localização do ingresso: " + localizacao);
+    }
+
 
 
     

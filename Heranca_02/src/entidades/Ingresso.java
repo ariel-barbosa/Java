@@ -16,12 +16,16 @@ public class Ingresso {
     }
 
     //Metodo Imprime
-    public double ImprimeValor() { 
-        return valor;
+    
+    public void imprimeValor() {
+        System.out.println("Valor do ingresso VIP: R$" + valor);
     }
+
 
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    
 
 }

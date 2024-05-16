@@ -4,11 +4,14 @@ public class Vip extends Ingresso {
 
     
     //Atributos para classe Vip
-    // private double valorVip;
     private double valorAdicional;
 
     //Construtor com função super()
     public Vip() {
+        
+    }
+
+    public Vip(double valorAdicional) {
         super();
     }
     
@@ -17,10 +20,14 @@ public class Vip extends Ingresso {
         this.valorAdicional = valorAdicional;
     }
 
+    
+
     //Metodo para retornar valor do ingresso vip
-    public double imprimeVip() {
-       return valor += this.valorAdicional;
+    @Override //Sobreescreve o metodo da SuperClass
+    public void imprimeValor() {
+        System.out.println("Valor do ingresso VIP: R$" + (valor + valorAdicional));
     }
+
 
     
     
