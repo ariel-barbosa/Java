@@ -6,8 +6,13 @@ public class Mamifero extends Animal {
     private String alimento;
 
     //Construtor
-    public Mamifero() {
+    public Mamifero(String string) {
         super();
+    }
+
+
+    public Mamifero(String nome, float comprimento, int numPatas, String cor, String ambiente, float veloMedia) {
+        super
     }
 
 
