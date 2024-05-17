@@ -8,7 +8,7 @@ public class Animal {
     private int numPatas;
     private String cor;
     private String ambiente;
-    private float veloMedia;
+    protected float veloMedia;
 
     //Construtor padrão
     public Animal() {
