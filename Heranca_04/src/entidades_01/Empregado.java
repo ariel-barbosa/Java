@@ -1,10 +1,16 @@
-package entidades;
+package entidades_01;
 
 public class Empregado {
 
     //atributos
-    protected String nome;
+    private String nome;
     protected float salario;
+
+    public Empregado(String nome, float salario) {
+        this.nome = nome;
+        this.salario = salario;
+    }
+
 
     //get e set
     public String getNome() {
