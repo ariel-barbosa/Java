@@ -3,7 +3,7 @@ package entidades;
 public class Conta {
     public int conta;
     public String titular;
-    public double saldo;
+    protected double saldo;
     
 
     // construtor Conta
@@ -17,7 +17,7 @@ public class Conta {
     }
 
     //metodo para sacar
-    public boolean sacar(float valor) {
+    public boolean sacar(double valor) {
         if (valor <= 0) {
             return false; // Valor do saque deve ser positivo
         }
