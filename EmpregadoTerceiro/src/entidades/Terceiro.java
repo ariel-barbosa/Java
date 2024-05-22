@@ -10,7 +10,7 @@ public class Terceiro extends Empregado {
 	public Terceiro() {
 		super();
 	}
-	public Terceiro(String nome, Integer horas, Double valorPorHora, Double despesaAdd) {
+	public Terceiro(String nome, int horas, Double valorPorHora, Double despesaAdd) {
 		super(nome, horas, valorPorHora);
 		this.despesaAdd = despesaAdd;
 	}

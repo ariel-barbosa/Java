@@ -4,7 +4,7 @@ public class Empregado {
 
 	// atributos para Empregado interno
 	private String nome;
-	private Integer horas;
+	private int horas;
 	private Double valorPorHora;
 	
 
@@ -19,7 +19,7 @@ public class Empregado {
 
 
 	// gets e sets
-	public String getnome() {
+	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
