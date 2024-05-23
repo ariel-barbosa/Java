@@ -1,26 +1,26 @@
 package entidades;
 
-import java.sql.Date;
+
 
 public class ProdutoUsado extends Produto {
 
     // atributos
-    private Date fabricacao;
+    private String fabricacao;
 
     // construtor 
     public ProdutoUsado() {
         super();
     }
-    public ProdutoUsado(String nome, Double preco, Date fabricacao) {
+    public ProdutoUsado(String nome, Double preco, String data) {
         super(nome, preco);
-        this.fabricacao = fabricacao;
+        this.fabricacao = data;
     }
 
     // get e set
-    public Date getFabricacao() {
+    public String getFabricacao() {
         return fabricacao;
     }
-    public void setFabricacao(Date fabricacao) {
+    public void setFabricacao(String fabricacao) {
         this.fabricacao = fabricacao;
     }
 
