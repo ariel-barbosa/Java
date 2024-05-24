@@ -45,7 +45,7 @@ public class Program {
 		System.out.println();
 		System.out.println("ÁREAS DAS FORMAS:");
 		for (Forma forma : lista) {
-			System.out.println(String.format("%.2f m", forma.area()));
+			System.out.println(String.format("%.2f m²", forma.area()));
 		}
 		
 		sc.close();
