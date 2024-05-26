@@ -9,7 +9,7 @@ public class PessoaJuridica extends Contribuinte{
     public PessoaJuridica() {
         super();
     }
-    public PessoaJuridica(int numFuncionario, String nome, double rendaAnual) {
+    public PessoaJuridica(String nome, double rendaAnual, int numFuncionario) {
         super(nome, rendaAnual);
         this.numFuncionario = numFuncionario;
     }
