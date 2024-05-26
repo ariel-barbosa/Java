@@ -1,6 +1,4 @@
-Descrição da Imagem
-A imagem mostra uma tela de computador com o seguinte texto em português:
-Fazer um programa para ver os dados de N contribuintes
+
 Descrição:
  * O programa lê os dados de N contribuintes, onde N é um valor fornecido pelo usuário.
  * Os contribuintes podem ser pessoa física ou pessoa jurídica.
