@@ -3,10 +3,13 @@ Descrição:
  * O programa lê os dados de N contribuintes, onde N é um valor fornecido pelo usuário.
  * Os contribuintes podem ser pessoa física ou pessoa jurídica.
  * O programa exibe o valor do imposto pago por cada contribuinte e o total de imposto arrecadado.
+ 
 Dados de Pessoa Física:
  * Nome
  * Renda anual
  * Gastos com saúde
+
+
 Dados de Pessoa Jurídica:
  * Nome
  * Renda anual
