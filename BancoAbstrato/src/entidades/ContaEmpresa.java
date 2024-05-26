@@ -8,8 +8,8 @@ public class ContaEmpresa extends Conta {
 		super();
 	}
 
-	public ContaEmpresa(Integer number, String holder, Double balance, Double limiteEmp) {
-		super(number, holder, balance);
+	public ContaEmpresa(Integer conta, String titular, Double saldo, Double limiteEmp) {
+		super(conta, titular, saldo);
 		this.limiteEmp = limiteEmp;
 	}
 
@@ -21,15 +21,16 @@ public class ContaEmpresa extends Conta {
 		this.limiteEmp = limiteEmp;
 	}
 	
-	public void loan(double amount) {
+	public void emprestimo(double amount) {
+		
 		if (amount <= limiteEmp) {
 			saldo += amount - 10.0;
 		}
 	}
 
     @Override
-    public boolean sacar(double valor) {
-        return super.sacar(valor);
+    public void sacar(double valor) {
+        saldo -= valor + limiteEmp;
     }
 	
 	
