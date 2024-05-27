@@ -52,5 +52,9 @@ public class Conta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+    public double getSaldo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getSaldo'");
+    }
 }    
 
