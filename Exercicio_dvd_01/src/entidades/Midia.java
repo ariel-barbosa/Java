@@ -73,7 +73,18 @@ public abstract class Midia {
         System.out.println("\n entre com o código: ");
         int cod = in.nextInt();
 
-        
+        System.out.println("\n Preço: ");
+        double pre = in.nextDouble();
+
+        System.out.println("Nome: ");
+        String nom = in.nextLine();
+
+        // enviando dados lidos para as funções set
+        setCodigo(cod);
+        setPreco(pre);
+        setNome(nom);
+
+        in.close();
     }
     
-}
+} // fim
