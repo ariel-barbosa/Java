@@ -40,10 +40,6 @@ public class Operacao {
 
             System.out.println(e.getMessage());
         }
-
-        
-        
-
         sc.close();
 
     }
