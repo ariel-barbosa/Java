@@ -31,8 +31,7 @@ public class Operacao {
             System.out.println("Valor de saque: ");
             double saq = sc.nextDouble();
 
-            double novosaldo = 0;
-            novosaldo = c.getSaldo() - saq;
+            double novosaldo = c.getSaldo() - saq;
             System.out.printf("Novo saldo: %.2f", novosaldo);
 
             c.saque(saq);
