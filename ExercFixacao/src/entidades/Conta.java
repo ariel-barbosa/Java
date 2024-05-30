@@ -57,7 +57,7 @@ public class Conta {
 			throw new BusinessException("Erro de saque: A quantia excede o limite de saque");
 		} 
 		if (valor > getSaldo()) {
-			throw new BusinessException("Erro de saque: Saldo insuficiente");
+			throw new BusinessException("Erro de saque: Saldo insuficiente... seu pobre!!");
 		}
 	}
 

@@ -27,6 +27,7 @@ public class Operacao {
         Conta c = new Conta(num, titu, sald, limit);
 
         try {
+
             System.out.println("Valor de saque: ");
             double saq = sc.nextDouble();
 
@@ -42,6 +43,7 @@ public class Operacao {
         }
         sc.close();
 
+        
     }
    
 }
