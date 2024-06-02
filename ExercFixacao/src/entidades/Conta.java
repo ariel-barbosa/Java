@@ -55,10 +55,10 @@ public class Conta {
     // metodo para validar o saque antes de sacar
     private void validaSaque(double valor) {
 		if (valor > getLimiteSaque()) {
-			throw new BusinessException("Erro de saque: A quantia excede o limite de saque");
+			throw new BusinessException(" \n Erro de saque: A quantia excede o limite de saque");
 		} 
 		if (valor > getSaldo()) {
-			throw new BusinessException("Erro de saque: Saldo insuficiente... seu pobre!!");
+			throw new BusinessException("\n Erro de saque: Saldo insuficiente");
 		}
 	}
 
