@@ -10,6 +10,8 @@ public class Operacao {
         Scanner sc = new Scanner(System.in);
 
         Locale.setDefault(Locale.US);
+
+        
         // entrada de dados da conta bancaria
         System.out.println("Numero: ");
         int num = sc.nextInt();
@@ -26,20 +28,24 @@ public class Operacao {
 
         Conta c = new Conta(num, titu, sald, limit);
 
+        System.out.println("Valor de saque: ");
+        double saq = sc.nextDouble();
+        
+        // bloco try-catch para lançar exceções
         try {
 
-            System.out.println("Valor de saque: ");
-            double saq = sc.nextDouble();
-
-            double novosaldo = c.getSaldo() - saq;
-            System.out.printf("Novo saldo: %.2f", novosaldo);
-
             c.saque(saq);
+            System.out.format("Titular: %s \n", titu); 
+            System.out.format("Novo saldo: %.2f", sald - saq);
+            
 
         } catch (RuntimeException e) {
 
             System.out.println(e.getMessage());
         }
+
+        
+
         sc.close();
 
         
