@@ -9,3 +9,5 @@ Implementar a lógica para validar a idade do usuário.
 Tratar a exceção NumberFormatException caso o usuário digite um valor não numérico.
 Exibir uma mensagem informativa caso o usuário seja menor de idade para votar.
 Se o usuário for elegível, calcular e exibir o ano em que ele poderá votar pela primeira vez, considerando o ano atual.
+
+De acordo com o artigo 14 da Constituição Federal, o voto é facultativo para jovens de 16 e 17 anos, mas passa a ser obrigatório a partir dos 18 anos. 
