@@ -13,13 +13,16 @@ public class Votar {
 
         Scanner sc = new Scanner(System.in);
 
-        try {
-            
-            Candidato c = new Candidato();
+        System.out.println("Informe a idade da pessoa: ");
+            int idade = sc.nextInt();
 
-            c.setNome("Ariel");
-            c.setIdade(13);
             
+            Candidato c = new Candidato(idade);
+
+        try {
+
+            c.setIdade(idade);
+
         } catch (IdadeExceptions e) {
             
             System.out.println(e.getMessage());
