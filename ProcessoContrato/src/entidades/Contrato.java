@@ -9,19 +9,23 @@ public class Contrato {
     // atributos para Contrato
     private Integer numero;
     private Date data;
+    private Double valorTotal;
+
+    
 
     // para associar as parcelas ao contrato fazemos uma Lista
     // do tipo <Parcelas>
-    List<Parcelas> parcelas = new ArrayList<Parcelas>();
+    private List<Parcelas> parcelas = new ArrayList<Parcelas>();
 
 
     // construtor
     public Contrato() {
 
     }
-    public Contrato(Integer numero, Date data) {
+    public Contrato(Integer numero, Date data, Double valorTotal) {
         this.numero = numero;
         this.data = data;
+        this.valorTotal = valorTotal;
     }
 
     // getters e setters
@@ -36,6 +40,13 @@ public class Contrato {
     }
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     // metodo getParcelas
