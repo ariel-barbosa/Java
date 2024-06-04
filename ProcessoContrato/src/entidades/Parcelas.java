@@ -32,9 +32,4 @@ public class Parcelas {
         this.valor = valor;
     }
     
-
-
-
-
-    
 }
