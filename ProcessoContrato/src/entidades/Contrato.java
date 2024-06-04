@@ -11,12 +11,9 @@ public class Contrato {
     private Date data;
     private Double valorTotal;
 
-    
-
     // para associar as parcelas ao contrato fazemos uma Lista
     // do tipo <Parcelas>
     private List<Parcelas> parcelas = new ArrayList<Parcelas>();
-
 
     // construtor
     public Contrato() {
