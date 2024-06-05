@@ -1,8 +1,7 @@
 package services;
 
-import java.time.*;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 import entidades.Contrato;
 import entidades.Parcelas;
@@ -11,6 +10,7 @@ import entidades.Parcelas;
 public class ServicoContrato {
 	
 	private PagOnline pagonline;
+    private double valorTotal = 0;
 	
 	public ServicoContrato(PagOnline pagonline) {
 		this.pagonline = pagonline;
@@ -21,11 +21,12 @@ public class ServicoContrato {
 
         for (int i = 1; i <= meses; i++) {
 
-            LocalDate dataParcela = contrato.getData().toLocalDate().plusMonths(i);
+            LocalDate dataParcela = contrato.getData().plusMonths(i);
             double juros = pagonline.juros(pgSimples, i);
             double valortaxa = pagonline.taxaPagamento(pgSimples + juros);
             double valorparc = pgSimples + juros + valortaxa;
             contrato.getParcelas().add(new Parcelas(dataParcela, valorparc));
+            valorTotal += valorparc;
 
         }
 	}
