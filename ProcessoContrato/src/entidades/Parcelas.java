@@ -1,15 +1,14 @@
 package entidades;
 
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.time.*;
 
 
 public class Parcelas {
 
     // atributos para Parcela
-    private Date vencimento;
+    private LocalDate vencimento;
     private Double valor;
-
     private DateTimeFormatter fmt = DateTimeFormatter.ofPattern("ddd/mmm/yyy");
 
     // construtor 
@@ -17,17 +16,17 @@ public class Parcelas {
 
     }
     
-    public Parcelas(Date vencimento, Double valor) {
+    public Parcelas(LocalDate vencimento, Double valor) {
         this.vencimento = vencimento;
         this.valor = valor;
     }
     
 
     // getters e setters
-    public Date getVencimento() {
+    public LocalDate getVencimento() {
         return vencimento;
     }
-    public void setVencimento(Date vencimento) {
+    public void setVencimento(LocalDate vencimento) {
         this.vencimento = vencimento;
     }
     public Double getValor() {
