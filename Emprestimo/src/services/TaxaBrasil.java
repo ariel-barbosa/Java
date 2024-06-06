@@ -2,7 +2,7 @@ package services;
 
 public interface TaxaBrasil {
 
-    double pagamento(double valor, int meses);
+    double pagamentoBr(double valor, int meses);
     
     
 }
