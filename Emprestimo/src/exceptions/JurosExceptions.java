@@ -6,3 +6,4 @@ public class JurosExceptions extends RuntimeException {
 	public JurosExceptions(String msg) {
 		super(msg);
 	}
+}

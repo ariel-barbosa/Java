@@ -36,12 +36,13 @@ public class Programa {
 
             System.out.printf("Pagamento após %d meses é %.2f\n", quantMes, juroBR.pagamentoBr(quant, quantMes));
 
-        } 
-        
+        }
+        if (ch == 'e') {
+            ServicoJuros juroUS = new ServicoJuros(quant, quantMes);
+            juroUS.pagamentoUs(quant, quantMes);
 
-        
-            
-        
+            System.out.printf("Pagamento após %d meses é %.2f\n", quantMes, juroUS.pagamentoUs(quant, quantMes));
+        }
         
         sc.close();
 
