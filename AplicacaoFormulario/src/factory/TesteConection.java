@@ -7,7 +7,7 @@ public class TesteConection {
     
     public static void main(String[] args) throws SQLException {
         Connection conect = new ConectionFactory().getConnection();
-        System.out.println("Aberta");
+        System.out.println("Conexão Aberta");
         
         conect.close(); 
     }
