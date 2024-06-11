@@ -18,8 +18,8 @@ public class UsuarioDAO {
         this.conection = new ConectionFactory().getConnection();
     }
 
-    public void adiciona(Usuario usuario) {
-        String sql = "INSERT INTO usuario(nome,cpf,email,telefone) VALUES(?,?,?,?)";
+    public void adicionar(Usuario usuario) {
+        String sql = "INSERT INTO tbl_usuario(nome,cpf,email,tel) VALUES(?,?,?,?)";
         try {
             PreparedStatement stmt = conection.prepareStatement(sql);
             stmt.setString(1, usuario.getNome());

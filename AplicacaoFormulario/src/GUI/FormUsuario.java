@@ -5,6 +5,10 @@
  */
 package GUI;
 
+import dao.UsuarioDAO;
+import modelo.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SENAI
@@ -27,31 +31,128 @@ public class FormUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabelNome = new javax.swing.JLabel();
+        jLabelCPF = new javax.swing.JLabel();
+        jLabelEmail = new javax.swing.JLabel();
+        jLabelTelefone = new javax.swing.JLabel();
+        RealizarCadastro = new javax.swing.JButton();
+        nome = new javax.swing.JTextField();
+        cpf = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
+        telefone = new javax.swing.JTextField();
+        jLabelCadastro = new javax.swing.JLabel();
+        jLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Cadastro De Usuario");
+        jLabelNome.setText("Nome");
+        getContentPane().add(jLabelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 40, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(291, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(261, Short.MAX_VALUE))
-        );
+        jLabelCPF.setText("CPF");
+        getContentPane().add(jLabelCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 40, 20));
+
+        jLabelEmail.setText("Email");
+        getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 40, 20));
+
+        jLabelTelefone.setText("Telefone");
+        getContentPane().add(jLabelTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 60, 20));
+
+        RealizarCadastro.setBackground(new java.awt.Color(128, 128, 128));
+        RealizarCadastro.setText("Cadastrar");
+        RealizarCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RealizarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RealizarCadastroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(RealizarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 160, 40));
+
+        nome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nome.setToolTipText("");
+        nome.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        nome.setName(""); // NOI18N
+        nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 220, 30));
+
+        cpf.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        cpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpfActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 220, 30));
+
+        email.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 220, 30));
+
+        telefone.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        telefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                telefoneActionPerformed(evt);
+            }
+        });
+        getContentPane().add(telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 220, 30));
+
+        jLabelCadastro.setFont(new java.awt.Font("SansSerif", 0, 36)); // NOI18N
+        jLabelCadastro.setText("CADASTRO");
+        getContentPane().add(jLabelCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 210, 70));
+
+        jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/resources/Fundo.png"))); // NOI18N
+        jLabel.setText("jLabel2");
+        jLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 818, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeActionPerformed
+
+    private void cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpfActionPerformed
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
+
+    private void telefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telefoneActionPerformed
+
+    private void RealizarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RealizarCadastroActionPerformed
+       // criando objeto do tipo Usuario
+     Usuario usuario = new Usuario();
+     
+     usuario.setNome(nome.getText());
+     usuario.setCpf(cpf.getText());
+     usuario.setEmail(email.getText());
+     usuario.setTelefone(telefone.getText());
+     
+     if ((nome.getText().isEmpty()) || (cpf.getText().isEmpty()) || (email.getText().isEmpty()) || (telefone.getText().isEmpty())) {
+        JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
+            
+    } else {
+        UsuarioDAO dao = new UsuarioDAO();
+        dao.adicionar(usuario);
+
+        nome.setText("");
+        cpf.setText("");
+        email.setText("");
+        telefone.setText("");  
+     }
+    }//GEN-LAST:event_RealizarCadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +190,16 @@ public class FormUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton RealizarCadastro;
+    private javax.swing.JTextField cpf;
+    private javax.swing.JTextField email;
+    private javax.swing.JLabel jLabel;
+    private javax.swing.JLabel jLabelCPF;
+    private javax.swing.JLabel jLabelCadastro;
+    private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelNome;
+    private javax.swing.JLabel jLabelTelefone;
+    private javax.swing.JTextField nome;
+    private javax.swing.JTextField telefone;
     // End of variables declaration//GEN-END:variables
 }
