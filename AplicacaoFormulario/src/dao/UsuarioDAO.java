@@ -19,7 +19,7 @@ public class UsuarioDAO {
     }
 
     public void adicionar(Usuario usuario) {
-        String sql = "INSERT INTO tbl_usuario(nome,cpf,email,tel) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO tbl_usuario(nome,cpf,email,telefone) VALUES(?,?,?,?)";
         try {
             PreparedStatement stmt = conection.prepareStatement(sql);
             stmt.setString(1, usuario.getNome());

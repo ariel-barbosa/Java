@@ -8,6 +8,7 @@ package GUI;
 import dao.UsuarioDAO;
 import modelo.Usuario;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,6 +32,8 @@ public class FormUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableCadastros = new javax.swing.JTable();
         jLabelNome = new javax.swing.JLabel();
         jLabelCPF = new javax.swing.JLabel();
         jLabelEmail = new javax.swing.JLabel();
@@ -46,17 +49,43 @@ public class FormUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTableCadastros.setBackground(new java.awt.Color(255, 255, 140));
+        jTableCadastros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "CPF", "Email", "Telefone"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableCadastros.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jTableCadastrosPropertyChange(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTableCadastros);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, 410));
+
         jLabelNome.setText("Nome");
-        getContentPane().add(jLabelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 40, 20));
+        getContentPane().add(jLabelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 40, 20));
 
         jLabelCPF.setText("CPF");
-        getContentPane().add(jLabelCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 40, 20));
+        getContentPane().add(jLabelCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 40, 20));
 
         jLabelEmail.setText("Email");
-        getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 40, 20));
+        getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 40, 20));
 
         jLabelTelefone.setText("Telefone");
-        getContentPane().add(jLabelTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 60, 20));
+        getContentPane().add(jLabelTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 60, 20));
 
         RealizarCadastro.setBackground(new java.awt.Color(128, 128, 128));
         RealizarCadastro.setText("Cadastrar");
@@ -66,7 +95,7 @@ public class FormUsuario extends javax.swing.JFrame {
                 RealizarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(RealizarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 160, 40));
+        getContentPane().add(RealizarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 140, 30));
 
         nome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         nome.setToolTipText("");
@@ -77,7 +106,7 @@ public class FormUsuario extends javax.swing.JFrame {
                 nomeActionPerformed(evt);
             }
         });
-        getContentPane().add(nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 220, 30));
+        getContentPane().add(nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 220, 30));
 
         cpf.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         cpf.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +114,7 @@ public class FormUsuario extends javax.swing.JFrame {
                 cpfActionPerformed(evt);
             }
         });
-        getContentPane().add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 220, 30));
+        getContentPane().add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 220, 30));
 
         email.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         email.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +122,7 @@ public class FormUsuario extends javax.swing.JFrame {
                 emailActionPerformed(evt);
             }
         });
-        getContentPane().add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 220, 30));
+        getContentPane().add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 220, 30));
 
         telefone.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         telefone.addActionListener(new java.awt.event.ActionListener() {
@@ -101,11 +130,11 @@ public class FormUsuario extends javax.swing.JFrame {
                 telefoneActionPerformed(evt);
             }
         });
-        getContentPane().add(telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 220, 30));
+        getContentPane().add(telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 220, 30));
 
         jLabelCadastro.setFont(new java.awt.Font("SansSerif", 0, 36)); // NOI18N
         jLabelCadastro.setText("CADASTRO");
-        getContentPane().add(jLabelCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 210, 70));
+        getContentPane().add(jLabelCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 210, 70));
 
         jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/resources/Fundo.png"))); // NOI18N
         jLabel.setText("jLabel2");
@@ -144,6 +173,18 @@ public class FormUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
             
     } else {
+         // adicionando dados do tipo array
+         String data[] = {nome.getText(), cpf.getText(), email.getText(), telefone.getText()};
+         
+         DefaultTableModel tabela = (DefaultTableModel)jTableCadastros.getModel();
+         // adiciona string array data
+         tabela.addRow(data); // linha adicionada
+         
+         // mensagem de linha inserida com sucesso
+         JOptionPane.showMessageDialog(null, "Dados inseridos com Sucesso");
+         
+         
+         
         UsuarioDAO dao = new UsuarioDAO();
         dao.adicionar(usuario);
 
@@ -153,6 +194,10 @@ public class FormUsuario extends javax.swing.JFrame {
         telefone.setText("");  
      }
     }//GEN-LAST:event_RealizarCadastroActionPerformed
+
+    private void jTableCadastrosPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTableCadastrosPropertyChange
+        
+    }//GEN-LAST:event_jTableCadastrosPropertyChange
 
     /**
      * @param args the command line arguments
@@ -199,6 +244,8 @@ public class FormUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelTelefone;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableCadastros;
     private javax.swing.JTextField nome;
     private javax.swing.JTextField telefone;
     // End of variables declaration//GEN-END:variables
