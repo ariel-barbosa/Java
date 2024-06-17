@@ -4,6 +4,8 @@ import factory.ConectionFactory;
 import modelo.Usuario;
 import java.sql.*;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuarioDAO {
 
@@ -19,7 +21,7 @@ public class UsuarioDAO {
     }
 
     public void adicionar(Usuario usuario) {
-        String sql = "INSERT INTO tbl_usuario(nome,cpf,email,tel) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO tbl_usuario(nome,cpf,email,telefone) VALUES(?,?,?,?)";
         try {
             PreparedStatement stmt = conection.prepareStatement(sql);
             stmt.setString(1, usuario.getNome());
@@ -28,8 +30,36 @@ public class UsuarioDAO {
             stmt.setString(4, usuario.getTelefone());
             stmt.execute();
             stmt.close();
+            
         } catch (SQLException u) {
             throw new RuntimeException(u);
         }
     }
-}
+        
+        public List<Usuario> consultarTodosUsuarios() {
+        String sql = "SELECT * FROM tbl_usuario";
+        List<Usuario> usuarios = new ArrayList<>();
+        
+        try {
+            PreparedStatement stmt = conection.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setNome(rs.getString("nome"));
+                usuario.setCpf(rs.getString("cpf"));
+                usuario.setEmail(rs.getString("email"));
+                usuario.setTelefone(rs.getString("telefone"));
+                usuarios.add(usuario);
+            }
+            
+            rs.close();
+            stmt.close();
+        } catch (SQLException u) {
+            throw new RuntimeException(u);
+        }
+        
+        return usuarios;
+    }
+  }
+
