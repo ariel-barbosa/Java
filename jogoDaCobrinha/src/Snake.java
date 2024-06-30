@@ -43,7 +43,15 @@ public class Snake extends JFrame  {
 
     public static void cliqueBotao(ActionEvent e) {
         // codigo que vai desponder ao clique do botão
-        JOptionPane.showMessageDialog(null, "Funcionou!!", "Oops", JOptionPane.INFORMATION_MESSAGE);
+
+        // JOptionPane.showMessageDialog(null, "Funcionou!!", "Oops", JOptionPane.INFORMATION_MESSAGE);
+        // esta linha acima é um teste para o botão
+
+        String nome = nomeBox.getText(); // estou conseguindo instancioar aqui o objeto nomeBox porque é Global
+        String mensagem = "Olá " + nome;
+
+        labelSaida.setText(mensagem);
+
 
     }
 
