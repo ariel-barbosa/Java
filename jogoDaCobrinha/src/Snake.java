@@ -18,8 +18,8 @@ public class Snake extends JFrame  {
         janela.setTitle("Snake Game");
         janela.setVisible(true);
 
-        // janela.setLayout(new FlowLayout()); // constroi meu layout
-        janela.setLayout(new GridLayout(3, 2)); // linhas, colunas
+        janela.setLayout(new FlowLayout()); // constroi meu layout
+        
         // aqui adiciona os objetos no meu painel
         janela.getContentPane().add(labelDirecoes);
         janela.getContentPane().add(nomeBox);
@@ -28,11 +28,10 @@ public class Snake extends JFrame  {
 
         janela.getContentPane().setBackground(new Color(200,196,200));
         nomeBox.setForeground(new Color(200,300,300));
-        labelDirecoes.setFont(new Font("Concert_One", Font.BOLD, 35));
 
         // se quiser que o JFrame fique do menor tanmanho possivel
         // mas mostrando os componentes usamos o pack... Que não é o Grenn Bay Packers infelizmente
-        janela.pack();
+        // janela.pack();
 
         // add um action listener
         nomeBotao.addActionListener(new ActionListener() {
